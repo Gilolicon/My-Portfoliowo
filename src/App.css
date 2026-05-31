@@ -1,0 +1,174 @@
+        body {
+            background-color: #3a1285;
+            color: #e2e2e2;
+            font-family: 'monaco', monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .portfolio-card {
+            background-color: #1c1c1c;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+            padding: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        /* Image Section using Flexbox
+        kekmao i Ai'd this to make it mobile friendly */    
+        .image-container {
+            display: flex;
+            gap: 10px; /* Increased gap to prevent overlapping when one grows */
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            
+            /* margin-bottom: 10px; */
+            padding: 20px 0px 20px 0px;
+            /* background-color: #fff; */
+            
+        }
+
+        .img-box img {
+            width: 350px;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #444;
+            z-index: -1;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, border-color 0.3s;
+        }
+
+        .image-container:hover .img-box img {
+            transform: scale(0.7);
+            opacity: 0.6;
+        }
+
+        .image-container .img-box img:hover {
+            transform: scale(1.2) !important;
+            opacity: 1;
+            border-color: skyblue;
+            z-index: 5;
+        }
+
+        .img-label {
+            margin-top: 10px;
+            border-left: 4px solid white;
+            font-weight: bold;
+            display: block;
+            transition: opacity 0.3s;
+            z-index: 99;
+            
+        }
+
+        .image-container:hover .img-box:not(:hover) .img-label {
+            opacity: 0;
+        }
+
+        .content h2 {
+            color: skyblue;
+            margin: 5px;
+        }
+        
+        .containerDiv{
+            /* border: 1px solid rgba(255, 255, 255, 0.2); */
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 10px 20px 10px 20px;
+            margin: 0px 0px 10px 0px;
+            border-radius: 15px;
+            transition: 0.2s;
+            
+
+
+        }
+        .containerDiv:hover{
+            transform: scale(1.02);
+            box-shadow: 0 10px 10px  rgba(0,0,0,0.5);
+            background-color: rgba(255, 255, 255, 0.1);
+
+        }
+        .containerDiv h3{
+            border-left: 5px solid rgba(255, 255, 255);
+            padding: 10px ;
+            
+        }
+        .containerDiv h2{
+            border-left: 5px solid rgba(255, 255, 255);
+            border-right: 5px solid rgba(255, 255, 255);
+            padding: 10px ;
+            text-align: center;
+            
+        }
+        .dropdown-header {
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .dropdown-header:hover {
+            color: skyblue;
+        }
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out;
+        }
+        .dropdown-content.show {
+            max-height: 1000px;
+            opacity: 1;
+        }
+        .info-section {
+            display: grid;
+            grid-template-columns: 1fr ;
+            gap: 10px;
+            
+        }
+
+        
+        ul {
+            list-style-type: none;
+
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .nested-list {
+            padding-left: 15px;
+            border-left: 2px dashed #ffffff;
+            margin: 10px 25px 10px 25px;
+        }
+
+        a {
+            color: skyblue;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            filter: brightness(1.2);
+        }
+
+        /* Mobile Optimization */
+        /* this one too */
+        @media (max-width: 600px) {
+            .info-section {
+                grid-template-columns: 1fr;
+            }
+        }
